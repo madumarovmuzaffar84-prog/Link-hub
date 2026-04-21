@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="uz" class="antialiased">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link Hub - Muzaffar</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'blob': 'blob 15s infinite alternate ease-in-out',
+                        'blob-reverse': 'blob-reverse 20s infinite alternate ease-in-out',
+                        'pulse-ring': 'pulse-ring 2.5s cubic-bezier(0.215, 0.61, 0.355, 1) infinite',
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1) rotate(0deg)' },
+                            '50%': { transform: 'translate(10vw, 10vh) scale(1.1) rotate(180deg)' },
+                            '100%': { transform: 'translate(-5vw, -10vh) scale(0.9) rotate(360deg)' },
+                        },
+                        'blob-reverse': {
+                            '0%': { transform: 'translate(0px, 0px) scale(1.1) rotate(360deg)' },
+                            '50%': { transform: 'translate(-10vw, 15vh) scale(0.9) rotate(180deg)' },
+                            '100%': { transform: 'translate(5vw, -5vh) scale(1) rotate(0deg)' },
+                        },
+                        'pulse-ring': {
+                            '0%': { transform: 'scale(0.8)', opacity: '0.8' },
+                            '100%': { transform: 'scale(1.4)', opacity: '0' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+        
+        body {
+            background-color: #020617;
+            color: #ffffff;
+        }
+
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.4);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        
+        .glass-panel:hover {
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .shine-line {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.05) 50%, rgba(255,255,255,0) 100%);
+            transform: skewX(-20deg);
+        }
+        
+        @keyframes shineMove {
+            100% { left: 125%; }
+        }
+
+        .glass-panel:hover .shine-line {
+            animation: shineMove 1s ease-in-out;
+        }
+
+        .bg-shape {
+            position: fixed;
+            filter: blur(100px);
+            z-index: -1;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body class="relative min-h-screen overflow-x-hidden selection:bg-blue-500 selection:text-white flex flex-col">
+
+    <div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
+        <div class="bg-shape bg-blue-600 w-[70vw] h-[70vw] rounded-full top-[-20%] left-[-10%] animate-blob"></div>
+        <div class="bg-shape bg-purple-600 w-[60vw] h-[60vw] rounded-full top-[30%] right-[-20%] animate-blob-reverse"></div>
+        <div class="bg-shape bg-cyan-500 w-[80vw] h-[80vw] rounded-full bottom-[-20%] left-[20%] animate-blob"></div>
+        <div class="absolute inset-0 opacity-[0.03]" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E');"></div>
+    </div>
+
+    <script>
+        const config = {
+            profile: {
+                avatar: "https://ui-avatars.com/api/?name=Muzaffar&background=2563eb&color=fff&size=512&rounded=true&bold=true", 
+                name: "Muzaffar",
+                bio: "Apple qurilmalari holatini tezkor tekshirish va ishonchli ta'mirlash. Shunchaki ta'mirlash emas, qurilmangizga ikkinchi hayot beramiz.",
+                badges: [
+                    { icon: `<svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>`, text: "Apple Eksperti" },
+                    { icon: `<svg class="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.243-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>`, text: "Toshkent, O'zbekiston" }
+                ]
+            },
+            links: [
+                {
+                    title: "Narxni bilish",
+                    subtitle: "Qurilmangizni ta'mirlash narxini 1 daqiqada bilib oling.",
+                    icon: "⚡️",
+                    url: "#"
+                },
+                {
+                    title: "Usta bilan aloqa",
+                    subtitle: "Telegram orqali savollarga to'g'ridan-to'g'ri javob oling.",
+                    icon: "💬",
+                    url: "#"
+                },
+                {
+                    title: "Manzil & Vaqt",
+                    subtitle: "Google Maps orqali bizni osongina topib keling.",
+                    icon: "📍",
+                    url: "#"
+                },
+                {
+                    title: "Mijozlar fikri",
+                    subtitle: "Video-otzivlar va amaliy isbotlar.",
+                    icon: "⭐",
+                    url: "#"
+                }
+            ],
+            socials: [
+                { url: "#", icon: `<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.19-.08-.05-.19-.02-.27 0-.11.03-1.84 1.18-5.18 3.44-.49.34-.93.5-1.33.49-.44-.01-1.28-.25-1.9-.46-.77-.25-1.38-.38-1.33-.8.02-.22.33-.45.92-.68 3.59-1.56 5.98-2.6 7.17-3.1 3.42-1.42 4.13-1.67 4.59-1.68.1 0 .32.02.44.11.1.08.13.19.14.28 0 .04.01.12 0 .21z"/></svg>` },
+                { url: "#", icon: `<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>` },
+                { url: "#", icon: `<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>` },
+                { url: "https://github.com", icon: `<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>` }
+            ],
+            footer: "© 2026 iDoctor. Barcha huquqlar himoyalangan."
+        };
+    </script>
+
+    <div id="app" class="relative z-10 w-full flex-grow flex flex-col pt-12 pb-10 px-4 sm:px-6"></div>
+
+    <script>
+        const app = document.getElementById('app');
+
+        const gridContainer = document.createElement('div');
+        gridContainer.className = 'grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5 w-full max-w-5xl mx-auto mb-10';
+
+        const profileCard = `
+            <div class="col-span-1 md:col-span-2 glass-panel rounded-[2rem] p-8 md:p-10 flex flex-col justify-center relative overflow-hidden group">
+                <div class="relative w-20 h-20 sm:w-24 sm:h-24 mb-6">
+                    <div class="absolute inset-0 bg-blue-500 rounded-full animate-pulse-ring blur-md"></div>
+                    <img src="${config.profile.avatar}" alt="Avatar" class="relative w-full h-full object-cover rounded-full border-[3px] border-white/20 shadow-lg">
+                </div>
+                
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight drop-shadow-md">
+                    ${config.profile.name}
+                </h1>
+                
+                <p class="text-base sm:text-lg text-white/70 max-w-lg mb-8 leading-relaxed font-medium">
+                    ${config.profile.bio}
+                </p>
+                
+                <div class="flex flex-wrap gap-3 mt-auto">
+                    ${config.profile.badges.map(badge => `
+                        <div class="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs sm:text-sm font-medium text-white/80 backdrop-blur-md shadow-sm">
+                            ${badge.icon} ${badge.text}
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+        `;
+
+        const linksHTML = config.links.map((link) => {
+            return `
+                <a href="${link.url}" target="_blank" rel="noopener noreferrer" 
+                   class="col-span-1 glass-panel rounded-[2rem] p-6 sm:p-7 flex flex-col relative group hover:-translate-y-1.5 hover:shadow-[0_15px_40px_rgba(0,0,0,0.4)] overflow-hidden h-full">
+                    
+                    <div class="shine-line"></div>
+                    
+                    <div class="absolute top-6 right-6 text-white/30 group-hover:text-white transition-colors duration-300">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 7l-10 10M17 7H7M17 7v10"></path></svg>
+                    </div>
+
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-xl sm:text-2xl mb-8 shadow-inner group-hover:scale-110 group-hover:bg-white/10 transition-all duration-300">
+                        ${link.icon}
+                    </div>
+
+                    <div class="mt-auto">
+                        <h3 class="text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-blue-300 transition-colors duration-300 tracking-tight leading-tight">${link.title}</h3>
+                        <p class="text-[13px] sm:text-sm text-white/50 leading-relaxed font-medium">${link.subtitle}</p>
+                    </div>
+                </a>
+            `;
+        }).join('');
+
+        gridContainer.innerHTML = profileCard + linksHTML;
+
+        const footerContainer = document.createElement('div');
+        footerContainer.className = 'flex flex-col items-center w-full mt-auto pt-6';
+
+        const socialsHTML = `
+            <div class="flex items-center gap-4 mb-6">
+                ${config.socials.map(social => `
+                    <a href="${social.url}" target="_blank" rel="noopener noreferrer" 
+                       class="p-3.5 rounded-full glass-panel text-white/60 hover:text-white hover:scale-110 transition-all duration-300 flex items-center justify-center">
+                        ${social.icon}
+                    </a>
+                `).join('')}
+            </div>
+        `;
+
+        const footerHTML = `
+            <p class="text-[11px] sm:text-xs font-semibold text-white/30 tracking-widest uppercase">
+                ${config.footer}
+            </p>
+        `;
+
+        footerContainer.innerHTML = socialsHTML + footerHTML;
+
+        app.appendChild(gridContainer);
+        app.appendChild(footerContainer);
+    </script>
+</body>
+</html>
